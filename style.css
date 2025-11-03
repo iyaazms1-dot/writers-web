@@ -182,3 +182,105 @@ html,body{height:100%;margin:0;background:var(--bg-deep);font-family: "Poppins",
 .close{float:right; cursor:pointer; color:var(--muted)}
 input[type="text"], input[type="email"]{width:100%;padding:10px;border-radius:8px;border:none;background:rgba(255,255,255,0.02);color:var(--text);margin-top:8px}
 .small{display:block;margin-top:8px;color:var(--muted);font-size:0.9rem}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  background: black;
+  color: #fff;
+  transition: opacity 0.8s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Galaxy background animation */
+.galaxy {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0b0033, #000);
+  overflow: hidden;
+}
+
+.stars::before, .stars::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  animation: twinkle 20s linear infinite;
+}
+
+.clouds {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.05), transparent);
+  animation: moveClouds 40s linear infinite;
+}
+
+/* Animations */
+@keyframes twinkle {
+  from { transform: translate(0,0); }
+  to { transform: translate(-50%, -50%); }
+}
+
+@keyframes moveClouds {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Welcome text */
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: fadeIn 3s ease;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #ff4cf0;
+  text-shadow: 0 0 20px #ff4cf0, 0 0 40px #7a00ff;
+}
+
+.poem {
+  margin: 20px auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #dcdcdc;
+}
+
+.lunar-btn {
+  background: radial-gradient(circle at center, #ff4cf0, #7a00ff);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  animation: rippleIn 1.5s ease infinite alternate;
+  box-shadow: 0 0 20px #ff4cf0;
+}
+
+.lunar-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Water ripple (drop on river) animation */
+@keyframes rippleIn {
+  0% { box-shadow: 0 0 20px 5px rgba(255,76,240,0.6); }
+  100% { box-shadow: 0 0 60px 15px rgba(122,0,255,0.4); }
+}
+
+/* fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}

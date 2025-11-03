@@ -1,5 +1,7 @@
 // app.js — full app logic: posts, editor, upload, share, detail view
 (() => {
+    console.log("Writers Web App loaded");
+
   // selectors
   const feedList = document.getElementById('feedList');
   const publishBtn = document.getElementById('publishBtn');

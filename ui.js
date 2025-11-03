@@ -1,5 +1,7 @@
 // ui.js - UI & navigation helpers (upgraded)
 (() => {
+    console.log("UI initialized");
+
   // elements
   const navHome = document.getElementById('navHome');
   const navEditor = document.getElementById('navEditor');

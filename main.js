@@ -5,6 +5,35 @@ const submitLogin = document.getElementById('submitLogin');
 const userName = document.getElementById('userName');
 const profileName = document.getElementById('profileName');
 const startBtn = document.getElementById('startBtn');
+document.addEventListener('DOMContentLoaded', () => {
+  const saveBtn = document.getElementById('savePoem');
+  const clearBtn = document.getElementById('clearPoem');
+  const input = document.getElementById('poemInput');
+  const list = document.getElementById('poemList');
+  console.log("Storage active");
+
+  // Load saved poems
+  const poems = JSON.parse(localStorage.getItem('poems')) || [];
+  poems.forEach(renderPoem);
+
+  saveBtn.addEventListener('click', () => {
+    const text = input.value.trim();
+    if (text.length === 0) return;
+    poems.push(text);
+    localStorage.setItem('poems', JSON.stringify(poems));
+    renderPoem(text);
+    input.value = '';
+  });
+
+  clearBtn.addEventListener('click', () => input.value = '');
+
+  function renderPoem(poem) {
+    const div = document.createElement('div');
+    div.className = 'poem-card';
+    div.textContent = poem;
+    list.appendChild(div);
+  }
+});
 
 // Open modal
 loginBtn.onclick = () => {

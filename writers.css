@@ -137,3 +137,81 @@ body{
   .panel{padding:12px}
   .editor-area textarea{min-height:180px}
 }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0a001a, #1a002a);
+  color: #eee;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  background: rgba(20, 0, 40, 0.7);
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px #7a00ff;
+}
+
+.editor {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  border: none;
+  padding: 20px;
+  resize: none;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.editor-options {
+  margin-top: 10px;
+}
+
+.lunar-btn, .lunar-btn-alt {
+  margin: 10px;
+  border-radius: 30px;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lunar-btn {
+  background: linear-gradient(90deg, #ff4cf0, #7a00ff);
+  color: #fff;
+}
+
+.lunar-btn-alt {
+  background: rgba(255,255,255,0.1);
+  color: #ff4cf0;
+}
+
+.poem-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.poem-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px #7a00ff;
+  transition: 0.3s;
+}
+
+.poem-card:hover {
+  transform: scale(1.05);
+}
