@@ -9,12 +9,12 @@
 .stars,
 .clouds,
 .galaxy {
-  pointer-events: none;
+  pointer-events: none !important;
 }
 
 /* make buttons and inputs clickable (default, just in case) */
 button, textarea, input {
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
 body {
