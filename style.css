@@ -5,6 +5,17 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+/* background layers don’t block clicks */
+.stars,
+.clouds,
+.galaxy {
+  pointer-events: none;
+}
+
+/* make buttons and inputs clickable (default, just in case) */
+button, textarea, input {
+  pointer-events: auto;
+}
 
 body {
   height: 100vh;

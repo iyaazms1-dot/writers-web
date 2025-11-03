@@ -137,6 +137,18 @@ body{
   .panel{padding:12px}
   .editor-area textarea{min-height:180px}
 }
+/* background layers don’t block clicks */
+.stars,
+.clouds,
+.galaxy {
+  pointer-events: none;
+}
+
+/* make buttons and inputs clickable (default, just in case) */
+button, textarea, input {
+  pointer-events: auto;
+}
+
 body {
   margin: 0;
   background: linear-gradient(180deg, #0a001a, #1a002a);
