@@ -1,137 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Writers Web — Home</title>
-  <link rel="stylesheet" href="writers.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <script src="js/app.js" defer></script>
-  <script src="js/main.js" defer></script>
-  <script src="js/ui.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LunaR Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/writers.css">
 </head>
 <body>
-  <div class="app-root">
-    <!-- Top bar -->
-    <header class="topbar">
-      <div class="brand">
-        <div class="logo-mark" id="logoMark" aria-hidden="true">
-          <!-- small poetic moon mark -->
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2a9 9 0 1 0 9 9A9 9 0 0 0 12 2z" fill="currentColor" opacity="0.15"/><path d="M14.5 4.5a7 7 0 1 1-6.3 10.7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h1 class="brand-title">Writers Web</h1>
-      </div>
+  <header class="topbar">
+    <div class="brand">LunaR</div>
+    <nav class="nav-actions">
+      <a href="./writers.html" class="nav-btn active">Feed</a>
+      <a href="./library.html" class="nav-btn">Library</a>
+      <a href="./profile.html" class="nav-btn">Profile</a>
+    </nav>
+  </header>
 
-      <nav class="nav-actions">
-        <button class="nav-btn" id="navHome">Home</button>
-        <button class="nav-btn" id="navEditor">Editor</button>
-        <button class="nav-btn" id="navLibrary">Library</button>
-        <button class="nav-btn" id="navProfile">Profile</button>
-      </nav>
+  <main class="panel">
+    <h2>Welcome to Writer’s Hub</h2>
+    <p>Begin writing or exploring your library.</p>
+  </main>
 
-      <div class="top-right">
-        <button id="themeToggle" class="icon-btn" title="Toggle theme">🌗</button>
-        <div id="profileArea" class="profile-area">
-          <button id="loginBtnTop" class="small-btn">Login</button>
-          <div id="profileChip" class="profile-chip hidden">
-            <span id="profileInitials" class="initials">WW</span>
-            <span id="profileText" class="pname">Hi, Writer</span>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- MAIN CONTENT GRID -->
-    <main class="main-grid">
-      <!-- LEFT: Feed -->
-      <section id="home" class="panel panel-feed">
-        <div class="feed-header">
-          <h2>Discover</h2>
-          <p class="muted">A river of words — sorted by newest</p>
-        </div>
-        <div id="feedList" class="feed-list">
-          <!-- Post cards injected here -->
-        </div>
-      </section>
-
-      <!-- CENTER: Editor -->
-      <section id="editor" class="panel panel-editor hidden">
-        <div class="editor-header">
-          <h2>Write</h2>
-          <p class="muted">Compose your poem, story or blog</p>
-        </div>
-
-        <div class="editor-area">
-          <input id="postTitle" placeholder="Title (optional)" maxlength="120" />
-          <textarea id="postBody" placeholder="Begin writing..."></textarea>
-
-          <div class="editor-controls">
-            <label class="privacy">
-              <input type="checkbox" id="privacyToggle" />
-              <span>Private</span>
-            </label>
-
-            <label class="sig-toggle">
-              <input type="checkbox" id="sigToggle" />
-              <span>Append signature (LuneR.)</span>
-            </label>
-
-            <div class="editor-right">
-              <button id="saveDraft" class="btn-secondary">Save Draft</button>
-              <button id="publishBtn" class="btn-primary">Publish</button>
-            </div>
-          </div>
-
-          <div id="editorMsg" class="editor-msg muted"></div>
-        </div>
-      </section>
-
-      <!-- RIGHT: Library / Profile -->
-      <aside id="rightPanel" class="panel panel-right">
-        <div id="library" class="side-section">
-          <h3>Library</h3>
-          <p class="muted">Download your posts</p>
-          <div id="libraryList" class="library-list"></div>
-        </div>
-
-        <div id="profile" class="side-section hidden">
-          <h3>Profile</h3>
-          <div class="profile-settings">
-            <label>Name</label>
-            <input id="profileNameInput" placeholder="Your display name" />
-            <label>Signature</label>
-            <input id="profileSigInput" placeholder="LuneR." />
-            <label>Compact mobile menu</label>
-            <select id="mobileMenuStyle">
-              <option value="bottom">Bottom bar</option>
-              <option value="hamburger">Hamburger</option>
-            </select>
-            <div class="profile-actions">
-              <button id="saveProfile" class="btn-primary">Save</button>
-              <button id="logout" class="btn-secondary">Logout</button>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </main>
-
-    <!-- COMMENT MODAL -->
-    <div id="commentModal" class="modal hidden">
-      <div class="modal-card">
-        <header><h4>Comments</h4></header>
-        <div id="commentList" class="comments-list"></div>
-        <textarea id="newComment" placeholder="Write a comment..."></textarea>
-        <div class="modal-actions">
-          <button id="postComment" class="btn-primary">Post</button>
-          <button id="closeComments" class="btn-secondary">Close</button>
-        </div>
-      </div>
+  <div id="loginModal" class="modal" style="display:flex;">
+    <div class="modal-content">
+      <h3>Welcome, Writer</h3>
+      <input id="userName" type="text" placeholder="Your name">
+      <button id="submitLogin" class="btn-primary">Login</button>
     </div>
-
-    <!-- small notification -->
-    <div id="toast" class="toast hidden"></div>
-
   </div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/ui.js"></script>
 </body>
 </html>
