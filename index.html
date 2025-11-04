@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LunaR — Writer’s Web</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="welcome-body">
+  <div class="galaxy"></div>
+  <header class="w-header"><div class="brand">LunaR: The Writer’s Web</div></header>
+
+  <main class="stage">
+    <section class="hero">
+      <div class="poem-box">
+        <div class="poem-lines" id="welcomePoem">
+          <p class="line">In the hush between heartbeats, words ignite,</p>
+          <p class="line">A galaxy of lines that chase the night,</p>
+          <p class="line">Bring back the lost to silent skies,</p>
+          <p class="line">And wake the dreamer where the ink still lies.</p>
+        </div>
+        <div class="start-wrap"><button id="startBtn" class="start-btn">Start Your Journey</button></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("startBtn").addEventListener("click", () => {
+      window.location.href = "./html/writers.html";
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const lines = document.querySelectorAll(".poem-lines .line");
+      let i = 0;
+      (function reveal(){ if(i<lines.length){lines[i].classList.add("visible");i++;setTimeout(reveal,900);} })();
+    });
+  </script>
+</body>
+</html>
