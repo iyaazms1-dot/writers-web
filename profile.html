@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LunaR Profile</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">LunaR</div>
+    <nav class="nav-actions">
+      <a href="./writers.html" class="nav-btn">Feed</a>
+      <a href="./library.html" class="nav-btn">Library</a>
+      <a href="./profile.html" class="nav-btn active">Profile</a>
+    </nav>
+  </header>
+
+  <main class="panel">
+    <div class="profile-header">
+      <img src="../assets/user.png" alt="avatar" class="avatar">
+      <h2 id="userDisplay">Writer</h2>
+    </div>
+
+    <section class="bio-section">
+      <textarea id="bioText" placeholder="Write something about yourself..."></textarea>
+      <button id="saveBio" class="btn-primary">Save Bio</button>
+    </section>
+
+    <section class="settings">
+      <h3>Settings</h3>
+      <label><input type="checkbox" id="themeSwitch"> Light Theme</label><br>
+      <label><input type="checkbox" id="aiToggle"> LunaR Muse Active</label><br>
+      <button id="clearAll" class="btn-secondary">Clear All Poems</button>
+    </section>
+  </main>
+
+  <script src="../js/library.js"></script>
+  <script src="../js/app.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/ui.js"></script>
+
+</body>
+</html>
